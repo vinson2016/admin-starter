@@ -14,6 +14,7 @@ module.exports = {
             'prop-types',
             'react',
             'react-dom',
+            'react-loadable',
             'react-redux',
             'react-router-dom',
             'redux'

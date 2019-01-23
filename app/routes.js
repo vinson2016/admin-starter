@@ -1,25 +1,32 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import PageHome from './pages/home';
-import PageLogin from './pages/login';
-import PageCounter from './pages/counter';
+import Loadable from 'react-loadable';
 import Page404 from './pages/404';
+
+const Loading = () => (
+    <span>Loading...</span>
+);
+
+const lazy = Name => Loadable({
+    loader: () => import(`./pages/${Name}`),
+    loading: Loading
+});
 
 const routes = [
     {
         path: '/',
         exact: true,
-        component: PageHome
+        component: 'home'
     },
     {
         path: '/counter',
         exact: false,
-        component: PageCounter
+        component: 'counter'
     },
     {
         path: '/login',
         exact: false,
-        component: PageLogin
+        component: 'login'
     }
 ];
 
@@ -30,7 +37,7 @@ export default (
                 key={i}
                 exact={item.exact}
                 path={item.path}
-                component={item.component}
+                component={lazy(item.component)}
             />
         ))}
 

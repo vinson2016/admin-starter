@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const baseConfig = require('./pack.base');
 
 const devConfig = merge(baseConfig, {
@@ -13,6 +14,10 @@ const devConfig = merge(baseConfig, {
     plugins: [
         new webpack.DllReferencePlugin({
             manifest: require(path.join(__dirname, '../dll', 'vendor-manifest.json'))
+        }),
+        new AddAssetHtmlPlugin({
+            filepath: require.resolve('../dll/vendor.dll.js'),
+            includeSourcemap: false
         })
     ]
 });
