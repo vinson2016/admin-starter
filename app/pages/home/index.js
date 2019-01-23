@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; // eslint-disable-line
-import avatar from '../../../public/avatar.jpeg';
-import { Button } from '@alifd/next';
+import {
+    Grid,
+    Card
+} from '@alifd/next';
+
+const { Row, Col } = Grid;
+
+const commonProps = {
+    style: { width: '100%' },
+    subTitle: 'SubTitle',
+    extra: 'Link'
+};
 
 class Home extends Component {
     static propTypes = {};
@@ -9,10 +19,74 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <img src={avatar} width={100} />
-                <p>
-                    <Button type='primary'>Hello React!</Button>
-                </p>
+                <Row gutter={15} style={{ marginBottom: 15 }}>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                </Row>
+                <Row gutter={15} style={{ marginBottom: 15 }}>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                </Row>
+                <Row gutter={15} style={{ marginBottom: 15 }}>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                </Row>
+                <Row gutter={15} style={{ marginBottom: 15 }}>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                    <Col span='8'>
+                        <Card {...commonProps} title='Simple Card'>
+                            <div className='card-placeholder' />
+                        </Card>
+                    </Col>
+                </Row>
             </div>
         );
     }

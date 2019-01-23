@@ -24,7 +24,7 @@ class Counter extends Component {
         const { count, increase, decrease } = this.props;
         return (
             <div>
-                <h4>The count is: {count}</h4>
+                <div>The count is: {count}</div>
                 <p>
                     <Button style={{ marginRight: 5 }} onClick={() => decrease(1)}>减一</Button>
                     <Button type='primary' onClick={() => increase(1)}>加一</Button>
