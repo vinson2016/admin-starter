@@ -2,14 +2,21 @@
     "name": "admin-starter",
     "version": "1.0.0",
     "description": "自用中台项目脚手架",
-    "main": "index.js",
+    "main": "./public/electron.js",
     "scripts": {
         "clean": "rimraf build",
         "lint": "eslint .",
         "lint:fix": "npm run lint -- --fix",
         "dll": "webpack --config ./scripts/pack.dll.js",
         "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/pack.dev.js",
-        "build": "npm run clean && cross-env NODE_ENV=production webpack --config ./scripts/pack.build.js"
+        "build": "npm run clean && cross-env NODE_ENV=production webpack --config ./scripts/pack.build.js",
+        "build:electron": "npm run clean && cross-env NODE_ENV=production webpack --config ./scripts/pack.electron.js",
+        "electron-dev": "concurrently \"BROWSER=none npm run dev\" \"wait-on http://localhost:8088 && electron .\"",
+        "pack:mac": "electron-builder --mac",
+        "pack:win": "electron-builder --win",
+        "pack:linux": "electron-builder --linux",
+        "prepack:all": "npm run build:electron",
+        "pack:all": "electron-builder -mwl"
     },
     "repository": {
         "type": "git",
@@ -35,9 +42,12 @@
         "@babel/preset-react": "^7.0.0",
         "babel-loader": "^8.0.5",
         "babel-plugin-import": "^1.11.0",
+        "concurrently": "^4.1.0",
         "copy-webpack-plugin": "^4.6.0",
         "cross-env": "^5.2.0",
         "css-loader": "^2.1.0",
+        "electron": "^4.0.2",
+        "electron-builder": "^20.38.5",
         "eslint": "^5.12.1",
         "eslint-config-standard": "^12.0.0",
         "eslint-config-standard-react": "^7.0.2",
@@ -57,6 +67,8 @@
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
         "terser-webpack-plugin": "^1.2.1",
+        "typescript": "^3.2.4",
+        "wait-on": "^3.2.0",
         "webpack": "^4.29.0",
         "webpack-cli": "^3.2.1",
         "webpack-dev-server": "^3.1.14",
@@ -71,6 +83,7 @@
         "add-asset-html-webpack-plugin": "^3.1.2",
         "babel-eslint": "^10.0.1",
         "connected-react-router": "^6.2.2",
+        "electron-is-dev": "^1.0.1",
         "history": "^4.7.2",
         "moment": "^2.24.0",
         "prop-types": "^15.6.2",
@@ -80,5 +93,20 @@
         "react-redux": "^6.0.0",
         "react-router-dom": "^4.3.1",
         "redux": "^4.0.1"
+    },
+    "build": {
+        "appId": "com.example.electron-cra",
+        "productName": "AdminStarter-桌面版",
+        "asar": false,
+        "extends": null,
+        "directories": {
+            "buildResources": "dist"
+        },
+        "mac": {
+            "icon": "build/images/logo.png"
+        },
+        "win": {
+            "icon": "build/images/logo.ico"
+        }
     }
 }
