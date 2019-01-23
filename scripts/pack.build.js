@@ -14,9 +14,10 @@ const buildConfig = merge(baseConfig, {
         filename: '[name].[chunkhash:8].js',
         publicPath: '/public/'
     },
-
-    // 这里可以配置CDN
-    externals: {},
+    externals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM'
+    },
     plugins: [
         new CopyWebpackPlugin([
             {

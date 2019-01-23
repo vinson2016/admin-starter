@@ -6,6 +6,7 @@
     "scripts": {
         "lint": "eslint .",
         "lint:fix": "npm run lint -- --fix",
+        "dll": "webpack --config ./scripts/pack.dll.js",
         "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/pack.dev.js",
         "build": "cross-env NODE_ENV=production webpack --config ./scripts/pack.build.js"
     },
