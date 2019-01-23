@@ -1,5 +1,5 @@
-import { Counter } from "./pages/counter/model";
+import { Counter } from './pages/counter/model';
 
 export default {
     Counter
-}
+};

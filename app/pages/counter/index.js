@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import {Button} from '@alifd/next';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';  // eslint-disable-line
+import { Button } from '@alifd/next';
 
 @connect(
     state => ({
@@ -14,15 +14,19 @@ import {Button} from '@alifd/next';
     })
 )
 class Counter extends Component {
-    static propTypes = {};
+    static propTypes = {
+        count: PropTypes.number,
+        increase: PropTypes.func,
+        decrease: PropTypes.func
+    };
 
     render() {
-        const {count, increase, decrease} = this.props;
+        const { count, increase, decrease } = this.props;
         return (
             <div>
                 <h4>The count is: {count}</h4>
                 <p>
-                    <Button style={{marginRight: 5}} onClick={() => decrease(1)}>减一</Button>
+                    <Button style={{ marginRight: 5 }} onClick={() => decrease(1)}>减一</Button>
                     <Button type='primary' onClick={() => increase(1)}>加一</Button>
                 </p>
             </div>

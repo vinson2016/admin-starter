@@ -20,12 +20,12 @@ const routes = [
         path: '/login',
         exact: false,
         component: PageLogin
-    },
+    }
 ];
 
 export default (
     <Switch>
-        {routes.map((item , i) => (
+        {routes.map((item, i) => (
             <Route
                 key={i}
                 exact={item.exact}
@@ -36,4 +36,4 @@ export default (
 
         <Route component={Page404} />
     </Switch>
-)
+);

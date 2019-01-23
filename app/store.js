@@ -1,5 +1,5 @@
 import { init } from '@rematch/core';
-import { connectRouter, routerMiddleware } from "connected-react-router";
+import { connectRouter, routerMiddleware } from 'connected-react-router';
 import createLoadingPlugin from '@rematch/loading';
 import createHistory from 'history/createHashHistory';
 

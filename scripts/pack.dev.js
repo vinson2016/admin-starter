@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 /**
@@ -93,7 +92,7 @@ const devConfig = {
         new HtmlWebPackPlugin({
             template: './app/index.html',
             filename: './index.html'
-        }),
+        })
     ]
 };
 

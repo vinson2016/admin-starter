@@ -4,6 +4,8 @@
     "description": "自用中台项目脚手架",
     "main": "index.js",
     "scripts": {
+        "lint": "eslint .",
+        "lint:fix": "npm run lint -- --fix",
         "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/pack.dev.js",
         "build": "cross-env NODE_ENV=production webpack --config ./scripts/pack.build.js"
     },
@@ -11,6 +13,9 @@
         "type": "git",
         "url": "git+https://github.com/rmlzy/admin-starter.git"
     },
+    "pre-commit": [
+        "lint"
+    ],
     "author": "rmlzy",
     "license": "MIT",
     "bugs": {
@@ -30,11 +35,21 @@
         "babel-plugin-import": "^1.11.0",
         "cross-env": "^5.2.0",
         "css-loader": "^2.1.0",
+        "eslint": "^5.12.1",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-config-standard-react": "^7.0.2",
+        "eslint-plugin-babel": "^5.3.0",
+        "eslint-plugin-import": "^2.15.0",
+        "eslint-plugin-node": "^8.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-react": "^7.12.4",
+        "eslint-plugin-standard": "^4.0.0",
         "file-loader": "^3.0.1",
         "html-webpack-plugin": "^3.2.0",
         "mini-css-extract-plugin": "^0.5.0",
         "node-sass": "^4.11.0",
         "optimize-css-assets-webpack-plugin": "^5.0.1",
+        "pre-commit": "^1.2.2",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
         "terser-webpack-plugin": "^1.2.1",
@@ -49,6 +64,7 @@
         "@babel/runtime": "^7.3.1",
         "@rematch/core": "^1.0.6",
         "@rematch/loading": "^1.1.2",
+        "babel-eslint": "^10.0.1",
         "connected-react-router": "^6.2.2",
         "history": "^4.7.2",
         "moment": "^2.24.0",

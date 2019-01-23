@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {Provider} from 'react-redux';
-import {ConnectedRouter} from 'connected-react-router';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'; // eslint-disable-line
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
 import createHistory from 'history/createHashHistory';
 import './styles/global.scss';
 import createStore from './store';
