@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class About extends Component {
+class Page404 extends Component {
     static propTypes = {};
-    
+
     render() {
         return (
             <div>
-                About
+                404
             </div>
         );
     }
 }
 
-export default About;
+export default Page404;

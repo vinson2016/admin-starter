@@ -1,33 +1,24 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {Provider} from 'react-redux';
+import {ConnectedRouter} from 'connected-react-router';
+import createHistory from 'history/createHashHistory';
 import './styles/global.scss';
-import HomePage from './pages/home';
-import LoginPage from './pages/login';
-import AboutPage from './pages/about';
+import createStore from './store';
+import models from './models';
+import routes from './routes';
+
+const history = createHistory();
+const store = createStore(models);
 
 class App extends Component {
     render() {
         return (
-            <Router>
-                <React.Fragment>
-                    <ul>
-                        <li>
-                            <Link to='/'>Home</Link>
-                        </li>
-                        <li>
-                            <Link to='/login'>Login</Link>
-                        </li>
-                        <li>
-                            <Link to='/about'>About</Link>
-                        </li>
-                    </ul>
-
-                    <Route exact path='/' component={HomePage} />
-                    <Route path='/about' component={AboutPage} />
-                    <Route path='/login' component={LoginPage} />
-                </React.Fragment>
-            </Router>
+            <Provider store={store}>
+                <ConnectedRouter history={history}>
+                    {routes}
+                </ConnectedRouter>
+            </Provider>
         );
     }
 }
