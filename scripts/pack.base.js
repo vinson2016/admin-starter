@@ -60,14 +60,15 @@ const baseConfig = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: env
+                NODE_ENV: JSON.stringify(env)
             },
             __DEV__,
             __PROD__
         }),
         new HtmlWebPackPlugin({
             template: './app/index.html',
-            filename: './index.html'
+            filename: './index.html',
+            env: env
         })
     ]
 };
