@@ -11,8 +11,7 @@ const buildConfig = merge(baseConfig, {
     devtool: false,
     output: {
         path: path.join(__dirname, '../build'),
-        filename: '[name].[chunkhash:8].js',
-        publicPath: '/'
+        filename: '[name].[chunkhash:8].js'
     },
     externals: {
         'react': 'React',
