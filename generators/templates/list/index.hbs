@@ -1,0 +1,82 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Table, Button, Pagination } from '@alifd/next';
+import './index.scss';
+
+const mockDataSource = () => {
+    const result = [];
+    for (let i = 0; i < 25; i++) {
+        result.push({
+            title: { name: `Quotation for 1PCS Nano ${3 + i}.0 controller compatible` },
+            id: 100306660940 + i,
+            time: 2000
+        });
+    }
+    return result;
+};
+
+class {{properCase className}} extends Component {
+    static propTypes = {};
+
+    static defaultProps = {};
+
+    state = {
+        loading: false,
+        list: []
+    };
+
+    async componentDidMount() {
+        await this.onQuery();
+    }
+
+    onQuery = async () => {
+        // 模拟数据请求
+        await this.setState({ loading: true });
+        setTimeout(() => {
+            this.setState({
+                loading: false,
+                list: mockDataSource()
+            });
+        }, 1500);
+    };
+
+    onView = (row) => {
+
+    };
+
+    onEdit = (row) => {
+
+    };
+
+    onDelete = (row) => {
+
+    };
+
+    onPageChange = async (currentPage) => {
+        await this.onQuery();
+    };
+
+    render() {
+        const { list, loading } = this.state;
+        return (
+            <div>
+                <Table dataSource={list} loading={loading}>
+                    <Table.Column title='序号' dataIndex='id' />
+                    <Table.Column title='名称' dataIndex='title.name' />
+                    <Table.Column title='耗时' dataIndex='time' />
+                    <Table.Column title='操作' cell={({ row }) => (
+                        <React.Fragment>
+                            <Button text type='primary' onClick={this.onView}>查看</Button>&nbsp;&nbsp;
+                            <Button text type='primary' onClick={this.onEdit}>编辑</Button>&nbsp;&nbsp;
+                            <Button text type='primary' warning onClick={this.onDelete}>删除</Button>
+                        </React.Fragment>
+                    )} />
+                </Table>
+
+                <Pagination onChange={this.onPageChange} className='pagination' />
+            </div>
+        );
+    }
+}
+
+export default {{properCase className}};

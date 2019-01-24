@@ -1,0 +1,109 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Form, Input, Grid, Button } from '@alifd/next';
+const FormItem = Form.Item;
+const { Row, Col } = Grid;
+
+const formItemLayout = {
+    labelCol: { fixedSpan: 4 }
+};
+
+class {{properCase className}} extends Component {
+    static propTypes = {};
+
+    static defaultProps = {};
+
+    onSearch = () => {
+
+    };
+
+    onReset = () => {
+
+    };
+
+    render() {
+        return (
+            <Form>
+                <Row gutter='4'>
+                    <Col>
+                    <FormItem
+                        {...formItemLayout}
+                        labelAlign='top'
+                        label='Search name:'
+                    >
+                        <Input placeholder='Enter a search name:' />
+                    </FormItem>
+                    <FormItem
+                        {...formItemLayout}
+                        labelAlign='top'
+                        label='Long search name:'
+                    >
+                        <Input placeholder='Enter a search name:' />
+                    </FormItem>
+                    <FormItem
+                        {...formItemLayout}
+                        labelAlign='top'
+                        label='Search name:'
+                    >
+                        <Input placeholder='Enter a search name:' />
+                    </FormItem>
+                    </Col>
+                    <Col>
+                    <FormItem
+                        {...formItemLayout}
+                        labelAlign='top'
+                        label='Search name:'
+                    >
+                        <Input placeholder='Enter a search name:' />
+                    </FormItem>
+                    <FormItem
+                        {...formItemLayout}
+                        labelAlign='top'
+                        label='Long search name:'
+                    >
+                        <Input placeholder='Enter a search name:' />
+                    </FormItem>
+                    <FormItem
+                        {...formItemLayout}
+                        labelAlign='top'
+                        label='Search name:'
+                    >
+                        <Input placeholder='Enter a search name:' />
+                    </FormItem>
+                    </Col>
+                    <Col>
+                    <FormItem
+                        {...formItemLayout}
+                        labelAlign='top'
+                        label='Search name:'
+                    >
+                        <Input placeholder='Enter a search name:' />
+                    </FormItem>
+                    <FormItem
+                        {...formItemLayout}
+                        labelAlign='top'
+                        label='Long search name:'
+                    >
+                        <Input placeholder='Enter a search name:' />
+                    </FormItem>
+                    <FormItem
+                        {...formItemLayout}
+                        labelAlign='top'
+                        label='Search name:'
+                    >
+                        <Input placeholder='Enter a search name:' />
+                    </FormItem>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="text-right">
+                    <Button type='primary' onClick={this.onSearch}>搜索</Button>&nbsp;&nbsp;
+                    <Button onClick={this.onReset}>重置</Button>
+                    </Col>
+                </Row>
+            </Form>
+        );
+    }
+}
+
+export default {{properCase className}};
