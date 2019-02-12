@@ -1,10 +1,16 @@
 import { init } from '@rematch/core';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
+import createRematchPersist from '@rematch/persist';
 import createLoadingPlugin from '@rematch/loading';
 import createHistory from 'history/createHashHistory';
 
 const options = {};
 const loading = createLoadingPlugin(options);
+const persistPlugin = createRematchPersist({
+    whitelist: ['modelName1'],
+    throttle: 5000,
+    version: 1
+});
 
 export const history = createHistory();
 
@@ -25,6 +31,7 @@ export default (models) => init({
     },
     models,
     plugins: [
-        loading
+        loading,
+        persistPlugin
     ]
 });

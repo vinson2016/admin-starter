@@ -86,6 +86,7 @@
         "@babel/runtime": "^7.3.1",
         "@rematch/core": "^1.0.6",
         "@rematch/loading": "^1.1.2",
+        "@rematch/persist": "^1.1.5",
         "add-asset-html-webpack-plugin": "^3.1.2",
         "babel-eslint": "^10.0.1",
         "connected-react-router": "^6.2.2",
@@ -98,7 +99,8 @@
         "react-loadable": "^5.5.0",
         "react-redux": "^6.0.0",
         "react-router-dom": "^4.3.1",
-        "redux": "^4.0.1"
+        "redux": "^4.0.1",
+        "redux-persist": "^5.10.0"
     },
     "build": {
         "appId": "com.example.electron-cra",
