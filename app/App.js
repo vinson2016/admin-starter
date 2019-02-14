@@ -20,7 +20,7 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <ConnectedRouter history={history}>
-                    <PersistGate persistor={persistor}>
+                    <PersistGate loading={null} persistor={persistor}>
                         {routes}
                     </PersistGate>
                 </ConnectedRouter>

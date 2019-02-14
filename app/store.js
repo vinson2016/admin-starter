@@ -5,11 +5,11 @@ import createLoadingPlugin from '@rematch/loading';
 import createHistory from 'history/createHashHistory';
 
 const options = {};
-const loading = createLoadingPlugin(options);
+const loadingPlugin = createLoadingPlugin(options);
 const persistPlugin = createRematchPersist({
-    whitelist: ['modelName1'],
-    throttle: 5000,
-    version: 1
+    whitelist: ['Counter'],
+    throttle: 3000, // 延迟三秒记录
+    version: 2
 });
 
 export const history = createHistory();
@@ -31,7 +31,7 @@ export default (models) => init({
     },
     models,
     plugins: [
-        loading,
+        loadingPlugin,
         persistPlugin
     ]
 });
