@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; // eslint-disable-line
 import { Provider } from 'react-redux';
@@ -20,9 +21,11 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <ConnectedRouter history={history}>
-                    <PersistGate loading={null} persistor={persistor}>
-                        {routes}
-                    </PersistGate>
+                    {/* TODO: 会引发路由无法跳转 @rmlzy */}
+                    {/* <PersistGate loading={null} persistor={persistor}> */}
+                    {/* {routes} */}
+                    {/* </PersistGate> */}
+                    {routes}
                 </ConnectedRouter>
             </Provider>
         );
