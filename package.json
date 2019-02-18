@@ -21,6 +21,7 @@
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
         "g": "npm run generate",
+        "install-depts": "electron-builder install-app-deps",
         "generate": "plop --plopfile ./generators/index.js"
     },
     "repository": {
@@ -71,6 +72,7 @@
         "plop": "^2.2.0",
         "pre-commit": "^1.2.2",
         "rimraf": "^2.6.3",
+        "rollup": "^1.2.1",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
         "terser-webpack-plugin": "^1.2.1",
